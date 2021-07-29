@@ -59,7 +59,7 @@ suite("Unit Tests", () => {
     test("No Mr. Bond, I expect you to die.", () => {
       assert.sameOrderedMembers(
         translator.aToB("No Mr. Bond, I expect you to die."),
-        ["No Mr. Bond, I expect you to die.", "Mr"]
+        ["No Mr Bond, I expect you to die.", "Mr"]
       );
     });
     // #9
@@ -97,7 +97,7 @@ suite("Unit Tests", () => {
     test("First, caramelise the onions.", () => {
       assert.sameOrderedMembers(
         translator.bToA("First, caramelise the onions."),
-        ["First, caramelize the onions.", "Tylenol"]
+        ["First, caramelize the onions.", "caramelize"]
       );
     });
     // #14
@@ -112,7 +112,7 @@ suite("Unit Tests", () => {
     test("I had a bicky then went to the chippy.", () => {
       assert.sameOrderedMembers(
         translator.bToA("I had a bicky then went to the chippy."),
-        ["I had a cookie then went to the chippy.", 
+        ["I had a cookie then went to the fish-and-chip shop.", 
         "cookie", "fish-and-chip shop"]
       );
     });
@@ -157,41 +157,45 @@ suite("Unit Tests", () => {
   suite("Highlight translation", () => {
     // #21
     test("Mangoes are my favorite fruit.", () => {
-      assert.equal(
+      assert.propertyVal(
         translator.translate({
           text: "Mangoes are my favorite fruit.", 
           locale: "american-to-british"
         }),
+        'translation',
         "Mangoes are my <span class='highlight'>favourite</span> fruit."
       );
     });
     // #22
     test("I ate yogurt for breakfast.", () => {
-      assert.equal(
+      assert.propertyVal(
         translator.translate({
           text: "I ate yogurt for breakfast.",
           locale: "american-to-british"
         }),
-        "I ate <span class='highlight'>yoghurt</span<> for breakfast."
+        'translation',
+        "I ate <span class='highlight'>yoghurt</span> for breakfast."
       );
     });
     // #23
     test("We watched the footie match for a while.", () => {
-      assert.equal(
+      assert.propertyVal(
         translator.translate({
           text: "We watched the footie match for a while.",
           locale: "british-to-american"
         }),
+        'translation',
         "We watched the <span class='highlight'>soccer</span> match for a while."
       );
     });
     // #24
     test("Paracetamol takes up to an hour to work.", () => {
-      assert.equal(
+      assert.propertyVal(
         translator.translate({
           text: "Paracetamol takes up to an hour to work.",
           locale: "british-to-american"
         }),
+        'translation',
         "<span class='highlight'>Tylenol</span> takes up to an hour to work."
       );
     });
