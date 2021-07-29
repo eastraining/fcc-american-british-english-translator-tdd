@@ -101,11 +101,6 @@ class Translator {
   }
 
   translate(textObj) {
-    if (!textObj.hasOwnProperty('text') && !textObj.hasOwnProperty('locale')) {
-      return {error: ''}
-    } else if (!textObj.text) {
-      return {error: 'Required field(s) missing'};
-    }
     let locale = this.checkLocale(textObj.locale);
     let translated;
     if (locale === 0) {
@@ -124,7 +119,7 @@ class Translator {
     let text = translated.shift();
     translated.forEach(x => {
       text = text.replace(new RegExp(x, 'gi'),
-      `<span class='highlight'>${x}</span>`)
+      `<span class=\"highlight\">${x}</span>`)
     });
     return {
       text: textObj.text,

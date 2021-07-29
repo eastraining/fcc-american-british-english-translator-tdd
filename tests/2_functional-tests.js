@@ -24,8 +24,8 @@ suite('Functional Tests', () => {
       expect(res.body).to.have.a.property('text').that.is.a('string').that
       .equals("I had a little chinwag with my friends down at the pub.");
       expect(res.body).to.have.a.property('translation').that.is.a('string').that
-      .equals("I had a little <span class='highlight'>chat</span> with my " 
-      + "friends down at the <span class='highlight'>bar</span>.");
+      .equals("I had a little <span class=\"highlight\">chat</span> with my " 
+      + "friends down at the <span class=\"highlight\">bar</span>.");
       done();
     });
   });

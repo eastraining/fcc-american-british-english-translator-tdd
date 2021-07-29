@@ -163,7 +163,7 @@ suite("Unit Tests", () => {
           locale: "american-to-british"
         }),
         'translation',
-        "Mangoes are my <span class='highlight'>favourite</span> fruit."
+        "Mangoes are my <span class=\"highlight\">favourite</span> fruit."
       );
     });
     // #22
@@ -174,7 +174,7 @@ suite("Unit Tests", () => {
           locale: "american-to-british"
         }),
         'translation',
-        "I ate <span class='highlight'>yoghurt</span> for breakfast."
+        "I ate <span class=\"highlight\">yoghurt</span> for breakfast."
       );
     });
     // #23
@@ -185,7 +185,7 @@ suite("Unit Tests", () => {
           locale: "british-to-american"
         }),
         'translation',
-        "We watched the <span class='highlight'>soccer</span> match for a while."
+        "We watched the <span class=\"highlight\">soccer</span> match for a while."
       );
     });
     // #24
@@ -196,7 +196,7 @@ suite("Unit Tests", () => {
           locale: "british-to-american"
         }),
         'translation',
-        "<span class='highlight'>Tylenol</span> takes up to an hour to work."
+        "<span class=\"highlight\">Tylenol</span> takes up to an hour to work."
       );
     });
   });
